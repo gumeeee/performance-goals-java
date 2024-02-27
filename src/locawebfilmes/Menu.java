@@ -63,7 +63,7 @@ public class Menu {
 
 				do {
 					System.out.println("Digite a Categoria do Filme");
-					System.out.println("1- Ação e Aventura 2- Terror 3- Comédia");
+					System.out.println("1 - Ação e Aventura / 2 - Terror / 3 - Comédia");
 					categoria = sc.nextInt();
 				} while (categoria < 1 && categoria > 3);
 
@@ -73,19 +73,24 @@ public class Menu {
 				System.out.println("Ano de lançamento: ");
 				anoLancamento = sc.nextInt();
 
-				System.out.println("Avaliação do Filme de 1 a 5: ");
-				avaliacao = sc.nextInt();
+				do {
+					System.out.println("Avaliação do Filme de 0 a 5: ");
+					avaliacao = sc.nextInt();
+
+				} while (avaliacao < 0 && avaliacao > 5);
 
 				System.out.println("Valor do filme: ");
 				precoAluguel = sc.nextFloat();
 
 				System.out.println("Digite o nome do filme: ");
+				sc.skip("\\R");
 				nomeFilme = sc.next();
 
 				System.out.println("Digite o nome do diretor do filme: ");
+				sc.skip("\\R");
 				diretor = sc.next();
 
-				System.out.println("Legal! Cadastrando filme! ");
+				System.out.println("\nLegal! Cadastrando filme! ");
 
 				switch (categoria) {
 				case 1:
@@ -129,8 +134,11 @@ public class Menu {
 				System.out.println("Ano de lançamento: ");
 				anoLancamento = sc.nextInt();
 
-				System.out.println("Avaliação do Filme de 1 a 5: ");
-				avaliacao = sc.nextInt();
+				do {
+
+					System.out.println("Avaliação do Filme de 0 a 5: ");
+					avaliacao = sc.nextInt();
+				} while (avaliacao < 0 && avaliacao > 5);
 
 				System.out.println("Valor do filme: ");
 				precoAluguel = sc.nextFloat();
@@ -141,18 +149,22 @@ public class Menu {
 				System.out.println("Digite o nome do diretor do filme: ");
 				diretor = sc.next();
 
-				System.out.println("Legal! Atualizando filme! ");
+				System.out.println("\n Legal! Atualizando filme! ");
 
 				switch (categoria) {
 				case 1:
+					System.out.println(
+							"Preparado pra viver uma ação ao assiste seu filme que está sendo atualizado!!! ENTÃO VAMOS LÁ");
 					filmes.atualizar(new AcaoAndAventura(nomeFilme, id, categoria, anoLancamento, diretor, avaliacao,
 							precoAluguel));
 					break;
 				case 2:
+					System.out.println("\nSeu filme de terror atualizando aterrorizantemente!!! HAHAHA");
 					filmes.atualizar(
 							new Terror(nomeFilme, id, categoria, anoLancamento, diretor, avaliacao, precoAluguel));
 					break;
 				case 3:
+					System.out.println("\n Está afim de uma boa comédia? Seu filme já esta atualizando!!");
 					filmes.atualizar(
 							new Comedia(nomeFilme, id, categoria, anoLancamento, diretor, avaliacao, precoAluguel));
 					break;
@@ -177,12 +189,12 @@ public class Menu {
 				break;
 
 			case 7:
-				System.out.println("Digite o ID do filme que queira deletar: ");
+				System.out.println("Digite o ID do filme que queira verificar o aluguel: ");
 				int idVerificarAluguel = sc.nextInt();
 
 				System.out.println("Vamos verificar! ");
 
-				filmes.alugarFilme(idVerificarAluguel);
+				filmes.disponivelParaAlugar(idVerificarAluguel);
 			}
 
 		}
