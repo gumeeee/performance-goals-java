@@ -19,5 +19,5 @@ public interface FilmeRepository {
 	
 	public void alugarFilme(int id);
 	
-	public void disponivelParaAlugar(boolean disponivel);
+	public void disponivelParaAlugar(int id);
 }

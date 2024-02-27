@@ -11,14 +11,13 @@ public abstract class Filme {
 	private float precoAluguel;
 
 	public Filme(String nomeFilme, int id, int categoria, int anoLancamento, String diretor, int avaliacao,
-			boolean disponivelParaAluguel, float precoAluguel) {
+			float precoAluguel) {
 		this.nomeFilme = nomeFilme;
 		this.id = id;
 		this.categoria = categoria;
 		this.anoLancamento = anoLancamento;
 		this.diretor = diretor;
 		this.avaliacao = avaliacao;
-		this.disponivelParaAluguel = disponivelParaAluguel;
 		this.precoAluguel = precoAluguel;
 	}
 
@@ -101,13 +100,13 @@ public abstract class Filme {
 		default:
 			tipoFilme = "Tipo de Conta invalida";
 		}
-		
+
 		System.out.println("************************************");
 
 		System.out.println("			Dados do Filme			");
 
 		System.out.println("************************************");
-		
+
 		System.out.println("Nome do Filme: " + this.nomeFilme);
 		System.out.println("ID do Filme: " + this.id);
 		System.out.println("Tipo da conta: " + tipoFilme);
@@ -116,7 +115,10 @@ public abstract class Filme {
 		System.out.println("Avaliação: " + this.avaliacao);
 		System.out.println("Disponivel para Aluguel? " + this.disponivelParaAluguel);
 		System.out.println("Preço do aluguel: " + this.precoAluguel);
-		
+		System.out.println("");
+		System.out.println("************************************");
+		System.out.println("");
+
 	}
 
 }
